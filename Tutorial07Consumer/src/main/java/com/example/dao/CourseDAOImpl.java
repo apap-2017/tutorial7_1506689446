@@ -20,13 +20,6 @@ public class CourseDAOImpl implements CourseDAO {
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
-
-/*	@Override
-	public StudentModel selectStudent(String npm) {
-		StudentModel student = restTemplate.getForObject("http://localhost:8080/rest/student/view/" + npm,
-				StudentModel.class);
-		return student;
-	}*/
 	
 	@Override
 	public CourseModel selectCourse(String id) {

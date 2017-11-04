@@ -13,11 +13,6 @@ import com.example.model.StudentModel;
 public class StudentDAOImpl implements StudentDAO {
 	@Autowired
 	private RestTemplate restTemplate;
-	
-	/*@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}*/
 
 	@Override
 	public StudentModel selectStudent(String npm) {

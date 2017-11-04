@@ -2,12 +2,6 @@ package com.example.dao;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.*;
 
 import com.example.model.CourseModel;
@@ -51,5 +45,8 @@ public interface StudentMapper
             "from studentcourse join course " +
             "on studentcourse.id_course = course.id_course " +
             "where studentcourse.npm = #{npm}")
+    @Results(value = {
+    		@Result(property="idCourse", column="id_course")
+    })
     List<CourseModel> selectCourses (@Param("npm") String npm);
 }
