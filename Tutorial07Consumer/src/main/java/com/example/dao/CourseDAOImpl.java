@@ -1,5 +1,7 @@
 package com.example.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -31,5 +33,11 @@ public class CourseDAOImpl implements CourseDAO {
 		CourseModel course = restTemplate.getForObject("http://localhost:8080/rest/course/view/" + id,
 				CourseModel.class);
 		return course;
+	}
+	
+	@Override
+	public List<CourseModel> selectAllCourse() {
+		List<CourseModel> courses = restTemplate.getForObject("http://localhost:8080/rest/course/viewall", List.class);
+		return courses;
 	}
 }

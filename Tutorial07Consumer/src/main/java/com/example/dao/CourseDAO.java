@@ -8,6 +8,6 @@ public interface CourseDAO {
 
 	CourseModel selectCourse(String id);
 	
-	/*List<CourseModel> selectAllCourse();*/
+	List<CourseModel> selectAllCourse();
 
 }
